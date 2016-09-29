@@ -25,5 +25,8 @@ turn word display n =
         else mkguess word display n
 
 
+dashes :: String -> String
+dashes word = replicate (length word) '-'
+
 starman :: String -> Int -> IO ()
-starman word n = turn word ['-' | x <- word] n
+starman word n = turn word (dashes word) n
